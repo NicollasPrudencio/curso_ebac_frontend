@@ -1,0 +1,151 @@
+/*
+
+Sintaxe CSS:
+seletor{
+    propriedade: valor
+} 
+
+__________
+
+Pontuação de especificidade da CSS
+Antes do seletor, usa-se um ponto de especificidade. Como o próprio
+nome sugere, se usa para referenciar algo específico. Exemplo:
+
+O # se usa para especificar que está se referenciando um ID.
+
+#sports {	
+   color: green;
+}
+
+Para referenciar uma classe, usa-se um ponto:
+
+.nome_da_classe {
+    color: red;
+}
+
+O * funciona como tudo, é um ponto de especificidade para referenciar
+tudo, e não apenas algo específico:
+
+*{
+    color: gold;
+}
+
+*/
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body > header{
+    background-color: black;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .container h1{
+    color:white;
+}
+
+header li {
+    display: inline;
+}
+
+header li a {
+    color: white;
+}
+
+.container {
+    width: 1366px;
+    margin: 0 auto;
+}
+
+.articles {
+    /* Explicação respectiva
+    Flexbox tem objetivo de tornar a criação de layout mais inteligentes e faceis manipulando objetos DENTRO DE UM MESMO CONTAINER.
+    display:flex; Display (ou mostrar) com valor flex, especifica que os elementos filhos podem ser manipulados de forma flexivel, apenas manuseando-os por propriedades paralelas.
+
+    flex-wrap:wrap; Significa que os itens dentro do elemento pai tem autonomia para quebrar(wrap) linha para se organizarem.
+    
+    justify-content:space-between; significa que os elementos irão justificar-se proporcionalmente ao ao flex container através de um espaço entre si, calculado altomaticamente e dinamicamente.
+    
+    */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.articles article img{
+    height: 180px;
+} 
+
+.articles article{
+    width: 30%;
+}
+
+section{
+    padding: 16px 0;
+}
+
+section h2,
+.articles article{
+    margin-bottom: 16px;
+}
+
+.articles article{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.articles article a{
+    background-color: blue;
+    color: white;
+    padding: 8px;
+    display:inline-block;
+}
+
+/* Parte do exercicio CSS 
+
+1. Criar duas sections;
+2. Criar outros articles (noticias);
+3. Usar diferentes imagens;
+4. Aplicar diferentes cores (como o exercicio não especifica o(s) elementos que devem ser aplicados tais cores, apliquei uma pra cada até para exercitar).
+
+*/
+
+#entertainment h2{
+    color: blueviolet;
+}
+
+#entertainment .container time,
+#technology .container time{
+    color: gray;
+}
+
+
+#technology h2{
+    color: brown;
+}
+
+#entertainment h3{
+    color: chocolate;
+}
+
+#technology h3{
+    color: darkgoldenrod;
+}
+
+#entertainment p{
+    color: darksalmon;
+}
+
+#technology p{
+    color: hotpink;
+}
+
+/* ------------------------*/
