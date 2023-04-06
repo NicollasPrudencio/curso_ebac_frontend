@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Github</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img class="profile-avatar" src="https://via.placeholder.com/180x180" alt=".">
+            <h1 class="profile-name">Nicollas Prudencio</h1>
+            <h2 class="profile-username" id="github-user">@ogiansouza</h2>
+            <ul class="numbers">
+                <li>
+                    <h4>Repositórios</h4>
+                    <div class="numbers-item-repo"></div>
+                </li>
+                <li>
+                    <h4>Seguidores</h4>
+                    <div class="numbers-item-followers"></div>
+                </li>
+                <li>
+                    <h4>Seguindo</h4>
+                    <div class="numbers-item-following"></div>
+                </li>
+            </ul>
+            <a href="#" class="profile-link">Ver no Github</a>
+        </div>
+    </header>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+                $(document).ready(function() {
+            var token = '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'; 
+            var username = 'nic37';
+            
+            $.ajax({
+                url: 'https://api.github.com/users/' + username,
+                headers: {
+                    'Authorization': 'token ' + token
+                },
+                success: function(data) {
+                    $('.profile-name').text(data.name);
+                    $('.profile-username').text('@' + data.login);
+                    $('.profile-avatar').attr('src', data.avatar_url);
+                    $('.numbers-item-repo').text(data.public_repos);
+                    $('.numbers-item-followers').text(data.followers);
+                    $('.numbers-item-following').text(data.following);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
